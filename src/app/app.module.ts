@@ -15,7 +15,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component'
 import { QuillModule } from 'ngx-quill';
+import { HeaderComponent } from './navigation/header/header.component';
 
+import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
+import { AuthService } from './auth/auth.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +30,10 @@ import { QuillModule } from 'ngx-quill';
     ExpandJobsComponent,
     WelcomeComponent,
     RegisterComponent,
+    HeaderComponent,
+    SidenavListComponent,
+ 
+   
     
  
 
@@ -44,7 +51,7 @@ import { QuillModule } from 'ngx-quill';
 
 
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

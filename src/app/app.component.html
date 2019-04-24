@@ -1,38 +1,10 @@
 <mat-sidenav-container id="first-nav">
     <mat-sidenav #sidenav role="navigation">
-    <mat-nav-list>
-        <a fxHide.gt-xs mat-list-item routerLink="/signup" (click)="sidenav.close()">
-        <mat-icon class="icons">face</mat-icon>
-        <span class="nav-caption">Signup</span>
-        </a>
-
-        <a fxHide.gt-xs mat-list-item routerLink="/login"(click)="sidenav.close()">
-            <mat-icon class="icons">face</mat-icon>
-            <span class="nav-caption">Login</span>
-            </a>
-
-            <a fxHide.gt-xs mat-list-item routerLink="/jobs"(click)="sidenav.close()">
-                <mat-icon class="icons">face</mat-icon>
-                <span class="nav-caption">Jobs</span>
-                </a>
-    </mat-nav-list>
-
-        </mat-sidenav>
+  <app-sidenav-list (closeSidenav)="sidenav.close()"></app-sidenav-list>
+      </mat-sidenav>
         <mat-sidenav-content>
         
-                <mat-toolbar color="primary">
-                    <div><button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button></div>
-                        <div style="font-family: cursive"><a routerLink="/">HELPINC</a></div>
-                        <div fxFlex fxLayoutAlign="end">
-                            <ul fxLayout fxLayoutGap="10px" class="navigation-items">
-                                   
-                                <li><a fxHide.xs routerLink="/signup" routerLinkActive="active">Signup</a></li>
-                                <li><a fxHide.xs routerLink="/login" routerLinkActive="active">Login</a></li>
-                                <li><a routerLink="/register" routerLinkActive="active"><mat-icon>create</mat-icon>Post a new job</a></li>
-                                
-                            </ul>
-                        </div>
-                    </mat-toolbar>
+              <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
                 <mat-sidenav-container id="second-nav">
                 
                         <mat-sidenav  fxHide.xs mode="side" opened><span id="dash"><a routerLink="/jobs">Jobs</a></span></mat-sidenav>
