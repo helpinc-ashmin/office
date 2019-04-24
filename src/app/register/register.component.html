@@ -1,0 +1,81 @@
+<section class="new-job" fxLayoutAlign="center">
+  <mat-card fxFlex.xs="100%" fxFlex="90%">
+<mat-card-title style="text-align: center;">*Please post your job prior to two days before posting.
+</mat-card-title>
+  <mat-card-content>
+      <div class="container">
+        <div class="row">
+    <div class="col-md-4">
+          <mat-form-field appearance="outline">
+            <mat-label>Name of your company</mat-label>
+            <input matInput placeholder="company">
+            <mat-icon matSuffix>business_center</mat-icon>
+            <mat-hint>Must be a legal one!</mat-hint>
+          </mat-form-field>
+          </div>
+        
+        <div class="col-md-4">
+          <mat-form-field>
+            <mat-label>Job category</mat-label>
+            <mat-select [formControl]="jobControl" required>
+              <mat-option>--</mat-option>
+              <mat-option *ngFor="let job of jobs" [value]="job">
+                {{job.name}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="jobControl.hasError('required')">Required!</mat-error>
+           
+          </mat-form-field>
+        </div>
+         
+        <div class="col-md-4">
+          <mat-form-field appearance="outline">
+              <mat-label>Job Title</mat-label>
+              <input matInput placeholder="Title">
+              <mat-icon matSuffix>insert_comment</mat-icon>
+              <mat-hint>No numbers</mat-hint>
+            </mat-form-field>
+      </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <mat-form-field>
+            <mat-label>Salary</mat-label>
+            <mat-select [formControl]="salaryControl" required>
+              <mat-option>--</mat-option>
+              <mat-option *ngFor="let salary of salaries" [value]="salary">
+                {{salary.name}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="salaryControl.hasError('required')">Please choose your salary</mat-error>
+           
+          </mat-form-field>
+        </div>
+       
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <form [formGroup]="editorForm">
+            <div class="form-group">
+              <label for="editor"></label><h3>Job Description</h3>
+              <quill-editor [style]="editorStyle" formControlName="editor"></quill-editor>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <form [formGroup]="editorForm">
+            <div class="form-group">
+              <label for="editor"></label><h3>Job specification</h3>
+              <quill-editor formControlName="editor"></quill-editor>
+            </div>
+          </form>
+        </div>
+      </div>
+      </div>
+
+  </mat-card-content>
+  <mat-card-actions fxLayoutAlign="center">
+    <button mat-raised-button >Post your job</button>
+  </mat-card-actions>
+  </mat-card>
+</section>

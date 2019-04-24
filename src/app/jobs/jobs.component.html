@@ -1,0 +1,5 @@
+<mat-tab-group class="job" *ngIf="!onGoingJobs">
+  <mat-tab label="New jobs"> <app-new-job (jobView)="onGoingJobs=true"></app-new-job> </mat-tab>
+  <mat-tab label="Previous jobs"><app-old-job></app-old-job> </mat-tab>
+</mat-tab-group>
+<app-expand-jobs *ngIf="onGoingJobs"></app-expand-jobs>

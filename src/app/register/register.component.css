@@ -1,0 +1,10 @@
+.new-job{
+    padding-top:30px;
+    padding-bottom:30px;
+    height:100%;
+    background: rgba(48, 48, 48, 0.2);
+}
+mat-card{
+    background: rgba(247, 248, 250, 0.959)
+    
+}
