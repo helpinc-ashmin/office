@@ -1,13 +1,33 @@
-<mat-toolbar color="primary">
-  <div><button mat-icon-button (click)="onToggleSidenav()"><mat-icon>menu</mat-icon></button></div>
-      <div style="font-family: cursive"><a routerLink="/">HELPINC</a></div>
-      <div fxFlex fxLayoutAlign="end">
-          <ul fxLayout fxLayoutGap="10px" class="navigation-items">
-                 
-              <li><a fxHide.xs routerLink="/signup" routerLinkActive="active">Signup</a></li>
-              <li><a fxHide.xs routerLink="/login" routerLinkActive="active">Login</a></li>
-              <li><a routerLink="/register" routerLinkActive="active"><mat-icon>create</mat-icon>Post a new job</a></li>
-              
-          </ul>
-      </div>
+  <mat-toolbar color="primary">
+    <div fxHide.gt-xs *ngIf="isAuth" >
+      <button mat-icon-button (click)="onToggleSidenav()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+    <div>
+      <a routerLink="/">HELPINC</a>
+    </div>
+    <div fxFlex fxLayout fxLayoutAlign="flex-end">
+      <ul fxLayout fxLayoutGap="10px" class="navigation-items">
+        <li *ngIf="!isAuth">
+          <a routerLink="/signup">Signup</a>
+        </li>
+        <li *ngIf="!isAuth">
+          <a routerLink="/login">Login</a>
+        </li>
+        <li fxHide.xs *ngIf="isAuth">
+          <a routerLink="/register"><mat-icon>create</mat-icon>Post a new job</a>
+        </li>
+        <li *ngIf="isAuth">
+          <a style="cursor: pointer" (click)="onLogout()">Logout</a>
+        </li>
+      </ul>
+    </div>
   </mat-toolbar>
+  
+
+
+
+
+
+ 

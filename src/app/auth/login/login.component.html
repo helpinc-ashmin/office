@@ -22,7 +22,14 @@
         <mat-hint>Please enter your password.</mat-hint>
         <mat-error>Missing password.</mat-error>
       </mat-form-field>
+      <div class="row">
+        <div class="col-md-6">
       <button type="submit" mat-raised-button color="primary" [disabled]="loginForm.invalid">Submit</button>
+    </div>
+    <div class="col-md-6">
+      <a routerLink="/signup">new user?</a>
+      </div>
+      </div>
     </form>
   </section>
   
