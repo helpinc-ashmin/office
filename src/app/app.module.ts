@@ -16,9 +16,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component'
 import { QuillModule } from 'ngx-quill';
 import { HeaderComponent } from './navigation/header/header.component';
-
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 import { AuthService } from './auth/auth.service';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormModalComponent } from './jobs/new-job/form-modal/form-modal.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +34,9 @@ import { AuthService } from './auth/auth.service';
     RegisterComponent,
     HeaderComponent,
     SidenavListComponent,
+    FormModalComponent,
+   
+  
  
    
     
@@ -39,6 +44,7 @@ import { AuthService } from './auth/auth.service';
 
   ],
   imports: [
+    NgbModule.forRoot(),
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -52,6 +58,9 @@ import { AuthService } from './auth/auth.service';
 
   ],
   providers: [AuthService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    FormModalComponent
+  ]
 })
 export class AppModule { }

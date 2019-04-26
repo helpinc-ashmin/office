@@ -2,7 +2,7 @@ html, body{
     height: 100%;
   }
   body { 
-              background-image:url(https://www.cyclone.co.nz/wp-content/uploads/2016/05/faq_title.jpg)  ;
+              background-image:url(https://www.cyclone.co.nz/wp-content/uploads/2016/05/faq_title.jpg);
               background-position: center center;
               background-repeat:  no-repeat;
               background-attachment: fixed;
@@ -16,7 +16,7 @@ html, body{
     height: 500px;
     position: absolute;
     left: 50%;
-    top: 60%;
+    top: 50%;
     transform: translate(-50%, -50%);  
     text-align: center;
   }
