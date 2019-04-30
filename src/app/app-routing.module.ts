@@ -5,6 +5,7 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
 import { JobsComponent } from './jobs/jobs.component';
 import { RegisterComponent } from './register/register.component';
+import { RegisteredComponent } from './register/registered/registered.component'
 import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes=[
@@ -13,6 +14,7 @@ const routes: Routes=[
     {path: 'login', component:LoginComponent},
     {path: 'jobs', component:JobsComponent, canActivate:[AuthGuard]},
     {path: 'register', component:RegisterComponent, canActivate:[AuthGuard]},
+    {path: 'registered', component:RegisteredComponent, canActivate:[AuthGuard]},
   
 ];
 
